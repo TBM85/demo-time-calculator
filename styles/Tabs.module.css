@@ -22,6 +22,12 @@
   background-color: #FFE3E3;
 }
 
+.tabs ul li button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
 .current_tab {
   background-color: #FFF !important;
   border-bottom: #FFF !important;
