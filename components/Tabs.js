@@ -17,16 +17,16 @@ const Tabs = () => {
   return (
     <div className={styles.tabs}>
       <ul>
-        <li className={isActive ? styles.current_tab : ""}>
-          <button type="button" onClick={clickHandler}>
-            Between Dates
-          </button>
-        </li>
-        <li className={!isActive ? styles.current_tab : ""}>
-          <button type="button" onClick={clickHandler}>
-            In Time
-          </button>
-        </li>
+        {tabs.map((tab, index) => (
+          <li
+            key={index}
+            className={activeTab === tab ? styles.current_tab : ""}
+          >
+            <button type="button" onClick={clickHandler}>
+              {tab}
+            </button>
+          </li>
+        ))}
       </ul>
       {isActive && <p>Between Dates Content</p>}
       {!isActive && <p>In Time Content</p>}
