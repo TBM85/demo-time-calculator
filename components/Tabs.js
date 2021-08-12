@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "../styles/Tabs.module.css";
+import BetweenDates from "./BetweenDates";
 
 const tabs = ["Between Dates", "In Time"];
 
@@ -28,7 +29,7 @@ const Tabs = () => {
           </li>
         ))}
       </ul>
-      {isActive && <p>Between Dates Content</p>}
+      {isActive && <BetweenDates />}
       {!isActive && <p>In Time Content</p>}
     </div>
   );
