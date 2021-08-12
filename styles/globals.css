@@ -36,7 +36,7 @@ h1 {
 .tab {
   padding: 0;
   margin: 0;
-  min-height: 8em;
+  min-height: 20em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -47,6 +47,17 @@ h1 {
   border-right: 1px solid var(--color-dark);
   border-left: 1px solid var(--color-dark);
   background-color: var(--background-light);
+}
+
+.tab .tab-text {
+  font-family: 'Dosis', sans-serif;
+  font-size: 1.4em;
+  color: var(--color-light);
+  margin: 1em;
+}
+
+.tab p {
+  margin: 1em 0 0 0;
 }
 
 .tab button {
