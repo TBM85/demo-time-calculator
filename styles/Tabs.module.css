@@ -12,13 +12,15 @@
 
 .tabs ul li {
   list-style: none;
-  padding: 0.5em 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 50%;
   min-height: 48px;
   border-top-left-radius: 0.25em;
   border-top-right-radius: 0.25em;
-  border: 1px solid #262A53;
-  background-color: #FFE3E3;
+  border: 1px solid var(--color-dark);
+  background-color: var(--background-dark);
 }
 
 .tabs ul li button {
@@ -30,6 +32,6 @@
 }
 
 .current_tab {
-  background-color: #FFF !important;
-  border-bottom: #FFF !important;
+  background-color: var(--background-light) !important;
+  border-bottom: var(--white) !important;
 }
