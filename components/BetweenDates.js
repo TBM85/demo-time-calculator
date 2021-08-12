@@ -18,8 +18,12 @@ const BetweenDates = () => {
     setSecondDate(enteredSecondValue);
   };
 
-  console.log(firstDate);
-  console.log(secondDate);
+  // Calculate the difference between the first and second selected date
+  const resultInDays =
+  (new Date(secondDate).getTime() - new Date(firstDate).getTime()) /
+  (1000 * 3600 * 24);
+
+  console.log(resultInDays);
 
   return (
     <form onSubmit={calculateHandler} className="tab">
