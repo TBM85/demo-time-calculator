@@ -1,10 +1,23 @@
-import React from "react";
+import useForm from "../hooks/useForm";
+import FormControl from "./FormControl";
 
 const DaysFromDate = () => {
+  const {
+    firstDate,
+    firstDateHandler
+  } = useForm();
+
   return (
-    <div className="tab">
-      <p>Days From Date Content</p>
-    </div>
+    <form className="tab">
+      <FormControl
+        id="first-date"
+        htmlFor="first-date"
+        value={firstDate}
+        onChange={firstDateHandler}
+      >
+        First Date:
+      </FormControl>
+    </form>
   );
 };
 
