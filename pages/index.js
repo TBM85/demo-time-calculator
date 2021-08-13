@@ -16,14 +16,7 @@ export default function Home() {
 
       <main>
         <h1>Time Calculator</h1>
-        <Tabs>
-          <div>
-            <p>Between Dates Content</p>
-          </div>
-          <div>
-            <p>In Time Content</p>
-          </div>
-        </Tabs>
+        <Tabs />
       </main>
     </div>
   );
