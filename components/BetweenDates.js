@@ -67,6 +67,7 @@ const BetweenDates = () => {
             <input
               type="date"
               id="second-date"
+              min={firstDate}
               value={secondDate}
               onChange={secondDateHandler}
             />
