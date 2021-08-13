@@ -8,6 +8,7 @@
   --color-dark: #2F2C23;
   --color-light: #685152;
   --white: #ffffff;
+  --danger: #ab0013;
 }
 
 html,
@@ -83,7 +84,7 @@ h1 {
 }
 
 .form_control {
-  margin: 1.5em 0.5em 0;
+  margin: 1em 0.5em 1em;
   width: 20em;
   justify-content: space-between;
   display: flex;
@@ -102,4 +103,12 @@ h1 {
   min-height: 48px;
   border-radius: 0.25em;
   color: var(--color-light);
+}
+
+.danger {
+  color: var(--danger);
+}
+
+.transparent {
+  color: transparent;
 }

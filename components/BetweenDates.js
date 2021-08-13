@@ -1,30 +1,24 @@
-import React, { Fragment, useRef, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 
 const BetweenDates = () => {
-  const firstInput = useRef();
-  const secondInput = useRef();
-
-  const [firstDate, setFirstDate] = useState();
-  const [secondDate, setSecondDate] = useState();
+  const [firstDate, setFirstDate] = useState("");
+  const [secondDate, setSecondDate] = useState("");
 
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const [isError, setIsError] = useState(false);
 
   // Sets the value of date inputs
   const calculateHandler = (event) => {
     event.preventDefault();
 
-    const enteredFirstValue = firstInput.current.value;
-    const enteredSecondValue = secondInput.current.value;
-
     // If any of the date inputs are empty the "Calculate" button doesn't work
-    if (!enteredFirstValue.trim().length || !enteredSecondValue.trim().length) {
-      return
+    if (!firstDate.trim().length || !secondDate.trim().length) {
+      setIsError(true);
+      return;
     } else {
-      setFirstDate(enteredFirstValue);
-      setSecondDate(enteredSecondValue);
-
       setIsSubmitted(true);
-    };
+    }
   };
 
   // Calculate the difference between the first and second selected date
@@ -35,7 +29,25 @@ const BetweenDates = () => {
   // Return to calculator between dates
   const returnHandler = () => {
     setIsSubmitted(false);
+    setFirstDate("");
+    setSecondDate("");
   };
+
+  // Update the first date value every time it changes
+  const firstDateHandler = (event) => {
+    setFirstDate(event.target.value);
+  }
+
+  // Update the second date value every time it changes
+  const secondDateHandler = (event) => {
+    setSecondDate(event.target.value);
+  }
+
+  useEffect(() => {
+    if (firstDate.length > 0 && secondDate.length > 0) {
+      setIsError(false);
+    };
+  }, [firstDate, secondDate]);
 
   return (
     <Fragment>
@@ -43,16 +55,25 @@ const BetweenDates = () => {
         <form onSubmit={calculateHandler} className="tab">
           <div className="form_control">
             <label htmlFor="first-date">First Date:</label>
-            <input type="date" id="first-date" ref={firstInput} />
+            <input
+              type="date"
+              id="first-date"
+              value={firstDate}
+              onChange={firstDateHandler}
+            />
           </div>
           <div className="form_control">
             <label htmlFor="second-date">Second Date:</label>
             <input
               type="date"
               id="second-date"
-              ref={secondInput}
+              value={secondDate}
+              onChange={secondDateHandler}
             />
           </div>
+          <small className={isError ? "danger" : "transparent"}>
+            *A date is required on both entries
+          </small>
           <button type="submit">Calculate</button>
         </form>
       ) : (
