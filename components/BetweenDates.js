@@ -16,10 +16,15 @@ const BetweenDates = () => {
     const enteredFirstValue = firstInput.current.value;
     const enteredSecondValue = secondInput.current.value;
 
-    setFirstDate(enteredFirstValue);
-    setSecondDate(enteredSecondValue);
+    // If any of the date inputs are empty the "Calculate" button doesn't work
+    if (!enteredFirstValue.trim().length || !enteredSecondValue.trim().length) {
+      return
+    } else {
+      setFirstDate(enteredFirstValue);
+      setSecondDate(enteredSecondValue);
 
-    setIsSubmitted(true);
+      setIsSubmitted(true);
+    };
   };
 
   // Calculate the difference between the first and second selected date
@@ -42,7 +47,11 @@ const BetweenDates = () => {
           </div>
           <div className="form_control">
             <label htmlFor="second-date">Second Date:</label>
-            <input type="date" id="second-date" ref={secondInput} />
+            <input
+              type="date"
+              id="second-date"
+              ref={secondInput}
+            />
           </div>
           <button type="submit">Calculate</button>
         </form>
