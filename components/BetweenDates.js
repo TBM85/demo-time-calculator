@@ -47,7 +47,7 @@ const BetweenDates = () => {
           <button type="submit">Calculate</button>
         </form>
       ) : (
-        <Result resultInDays={resultInDays} returnHandler={returnHandler} />
+        <Result result={resultInDays} returnHandler={returnHandler} />
       )}
     </Fragment>
   );
