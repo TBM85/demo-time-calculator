@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import useForm from "../hooks/useForm";
+import Error from "./Error";
 import FormControl from "./FormControl";
 
 const BetweenDates = () => {
@@ -41,9 +42,7 @@ const BetweenDates = () => {
           >
             Second Date:
           </FormControl>
-          <small className={isError ? "danger" : "transparent"}>
-            *A date is required on both entries
-          </small>
+          <Error isError={isError} />
           <button type="submit">Calculate</button>
         </form>
       ) : (
