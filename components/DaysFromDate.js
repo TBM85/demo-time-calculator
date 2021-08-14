@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import useForm from "../hooks/useForm";
 import Error from "./Error";
 import FormControl from "./FormControl";
+import Result from "./Result";
 
 const DaysFromDate = () => {
   const {
@@ -11,6 +12,7 @@ const DaysFromDate = () => {
     isError,
     firstDateHandler,
     secondDateHandler,
+    returnHandler,
     calculateHandler,
   } = useForm();
 
@@ -20,6 +22,8 @@ const DaysFromDate = () => {
     month: "long",
     day: "numeric",
   };
+
+  const isDaysFromDate = true;
 
   // Calculate the date that will be, after the selected days
   // from the selected date
@@ -55,7 +59,11 @@ const DaysFromDate = () => {
           <button type="submit">Calculate</button>
         </form>
       ) : (
-        <div>{resultInDate}</div>
+        <Result
+          result={resultInDate}
+          returnHandler={returnHandler}
+          isDaysFromDate={isDaysFromDate}
+        />
       )}
     </Fragment>
   );

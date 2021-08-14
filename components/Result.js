@@ -1,13 +1,19 @@
-import React from 'react';
+import React from "react";
 
 const Result = (props) => {
-  const { result, returnHandler } = props;
-  
+  const { result, returnHandler, isDaysFromDate } = props;
+
   return (
     <div className="tab">
       <div className="tab-text">
-        <p>The difference between the selected dates is:</p>
-        <p>{result} days</p>
+        <p>
+          {!isDaysFromDate
+            ? "The difference between the selected dates is:"
+            : "The resulting date is:"}
+        </p>
+        <p>
+          {result} {!isDaysFromDate ? "days" : ""}
+        </p>
       </div>
       <button type="button" onClick={returnHandler}>
         Return
