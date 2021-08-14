@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import useForm from "../hooks/useForm";
 import Error from "./Error";
 import FormControl from "./FormControl";
+import Result from "./Result";
 
 const BetweenDates = () => {
   const {
@@ -46,15 +47,7 @@ const BetweenDates = () => {
           <button type="submit">Calculate</button>
         </form>
       ) : (
-        <div className="tab">
-          <div className="tab-text">
-            <p>The difference between the selected dates is:</p>
-            <p>{resultInDays} days</p>
-          </div>
-          <button type="button" onClick={returnHandler}>
-            Return
-          </button>
-        </div>
+        <Result resultInDays={resultInDays} returnHandler={returnHandler} />
       )}
     </Fragment>
   );
