@@ -5,7 +5,7 @@ const FormControl = (props) => {
     <div className="form_control">
       <label htmlFor={props.htmlFor}>{props.children}</label>
       <input
-        type="date"
+        type={props.type}
         id={props.id}
         value={props.value}
         onChange={props.onChange}

@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment } from "react";
 import useForm from "../hooks/useForm";
 import FormControl from "./FormControl";
 
@@ -11,7 +11,7 @@ const BetweenDates = () => {
     firstDateHandler,
     secondDateHandler,
     returnHandler,
-    calculateHandler
+    calculateHandler,
   } = useForm();
 
   // Calculate the difference between the first and second selected date
@@ -25,6 +25,7 @@ const BetweenDates = () => {
         <form onSubmit={calculateHandler} className="tab">
           <FormControl
             id="first-date"
+            type="date"
             htmlFor="first-date"
             value={firstDate}
             onChange={firstDateHandler}
@@ -33,6 +34,7 @@ const BetweenDates = () => {
           </FormControl>
           <FormControl
             id="second-date"
+            type="date"
             htmlFor="second-date"
             value={secondDate}
             onChange={secondDateHandler}
