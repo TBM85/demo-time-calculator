@@ -7,6 +7,8 @@ const FormControl = (props) => {
       <input
         type={props.type}
         id={props.id}
+        min={props.min}
+        max={props.max}
         value={props.value}
         onChange={props.onChange}
       />

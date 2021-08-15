@@ -28,6 +28,7 @@ const BetweenDates = () => {
           <FormControl
             id="first-date"
             type="date"
+            max={secondDate}
             htmlFor="first-date"
             value={firstDate}
             onChange={firstDateHandler}
@@ -37,6 +38,7 @@ const BetweenDates = () => {
           <FormControl
             id="second-date"
             type="date"
+            min={firstDate}
             htmlFor="second-date"
             value={secondDate}
             onChange={secondDateHandler}
