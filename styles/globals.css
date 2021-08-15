@@ -113,3 +113,8 @@ h1 {
 .transparent {
   color: transparent;
 }
+
+footer {
+  font-family: 'Dosis', sans-serif;
+  font-size: 0.8em;
+}

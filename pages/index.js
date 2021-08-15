@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Footer from "../components/Footer";
 import Tabs from "../components/Tabs";
 import styles from "../styles/Home.module.css";
 
@@ -17,6 +18,7 @@ export default function Home() {
       <main>
         <h1>Time Calculator</h1>
         <Tabs />
+        <Footer />
       </main>
     </div>
   );
