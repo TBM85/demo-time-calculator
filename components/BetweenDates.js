@@ -6,19 +6,19 @@ import Result from "./Result";
 
 const BetweenDates = () => {
   const {
-    firstDate,
-    secondDate,
+    firstInput,
+    secondInput,
     isSubmitted,
     isError,
-    firstDateHandler,
-    secondDateHandler,
+    firstInputHandler,
+    secondInputHandler,
     returnHandler,
-    calculateHandler,
+    calculateHandler
   } = useForm();
 
   // Calculate the difference between the first and second selected date
   const resultInDays =
-    (new Date(secondDate).getTime() - new Date(firstDate).getTime()) /
+    (new Date(secondInput).getTime() - new Date(firstInput).getTime()) /
     (1000 * 3600 * 24);
 
   return (
@@ -28,20 +28,20 @@ const BetweenDates = () => {
           <FormControl
             id="first-date"
             type="date"
-            max={secondDate}
+            max={secondInput}
             htmlFor="first-date"
-            value={firstDate}
-            onChange={firstDateHandler}
+            value={firstInput}
+            onChange={firstInputHandler}
           >
             First Date:
           </FormControl>
           <FormControl
             id="second-date"
             type="date"
-            min={firstDate}
+            min={firstInput}
             htmlFor="second-date"
-            value={secondDate}
-            onChange={secondDateHandler}
+            value={secondInput}
+            onChange={secondInputHandler}
           >
             Second Date:
           </FormControl>

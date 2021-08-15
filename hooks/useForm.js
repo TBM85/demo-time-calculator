@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from 'react';
 
 const useForm = () => {
-  const [firstDate, setFirstDate] = useState("");
-  const [secondDate, setSecondDate] = useState("");
+  const [firstInput, setFirstInput] = useState("");
+  const [secondInput, setSecondInput] = useState("");
 
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const [isError, setIsError] = useState(false);
 
   // Update the first date value every time it changes
-  const firstDateHandler = (event) => {
-    setFirstDate(event.target.value);
+  const firstInputHandler = (event) => {
+    setFirstInput(event.target.value);
   };
 
   // Update the second date value every time it changes
-  const secondDateHandler = (event) => {
-    setSecondDate(event.target.value);
+  const secondInputHandler = (event) => {
+    setSecondInput(event.target.value);
   };
 
   // Sets the value of date inputs
@@ -23,7 +23,7 @@ const useForm = () => {
     event.preventDefault();
 
     // If any of the date inputs are empty the "Calculate" button doesn't work
-    if (!firstDate.trim().length || !secondDate.trim().length) {
+    if (!firstInput.trim().length || !secondInput.trim().length) {
       setIsError(true);
       return;
     } else {
@@ -34,23 +34,23 @@ const useForm = () => {
   // Return to calculator between dates
   const returnHandler = () => {
     setIsSubmitted(false);
-    setFirstDate("");
-    setSecondDate("");
+    setFirstInput("");
+    setSecondInput("");
   };
 
   useEffect(() => {
-    if (firstDate.length > 0 && secondDate.length > 0) {
+    if (firstInput.length > 0 && secondInput.length > 0) {
       setIsError(false);
     }
-  }, [firstDate, secondDate]);
+  }, [firstInput, secondInput]);
 
   return {
-    firstDate,
-    secondDate,
+    firstInput,
+    secondInput,
     isSubmitted,
     isError,
-    firstDateHandler,
-    secondDateHandler,
+    firstInputHandler,
+    secondInputHandler,
     returnHandler,
     calculateHandler
   }

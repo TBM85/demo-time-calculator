@@ -6,12 +6,12 @@ import Result from "./Result";
 
 const DaysFromDate = () => {
   const {
-    firstDate,
-    secondDate,
+    firstInput,
+    secondInput,
     isSubmitted,
     isError,
-    firstDateHandler,
-    secondDateHandler,
+    firstInputHandler,
+    secondInputHandler,
     returnHandler,
     calculateHandler,
   } = useForm();
@@ -27,8 +27,8 @@ const DaysFromDate = () => {
 
   // Calculate the date that will be, after the selected days
   // from the selected date
-  const newDate = new Date(firstDate).setDate(
-    new Date(firstDate).getDate() + 1 + parseInt(secondDate)
+  const newDate = new Date(firstInput).setDate(
+    new Date(firstInput).getDate() + 1 + parseInt(secondInput)
   );
 
   const resultInDate = new Date(newDate).toLocaleString("en-US", options);
@@ -41,8 +41,8 @@ const DaysFromDate = () => {
             id="first-date"
             type="date"
             htmlFor="first-date"
-            value={firstDate}
-            onChange={firstDateHandler}
+            value={firstInput}
+            onChange={firstInputHandler}
           >
             First Date:
           </FormControl>
@@ -50,8 +50,8 @@ const DaysFromDate = () => {
             id="days"
             type="number"
             htmlFor="days"
-            value={secondDate}
-            onChange={secondDateHandler}
+            value={secondInput}
+            onChange={secondInputHandler}
           >
             Days:
           </FormControl>
