@@ -7,12 +7,12 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Time Calculator</title>
         <meta
           name="description"
           content="A time calculator made with Next JS"
         />
         <link rel="icon" href="/favicon.ico" />
+        <title>Time Calculator</title>
       </Head>
 
       <main>
