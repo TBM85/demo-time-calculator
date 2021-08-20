@@ -4,6 +4,8 @@ import Tabs from "../components/Tabs";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
+  const prefix = "demo-time-calculator";
+
   return (
     <div className={styles.container}>
       <Head>
@@ -11,7 +13,7 @@ export default function Home() {
           name="description"
           content="A time calculator made with Next JS"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/prefix/favicon.ico" />
         <title>Time Calculator</title>
       </Head>
 
